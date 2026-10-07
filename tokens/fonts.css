@@ -1,0 +1,45 @@
+/* ============================================================
+   Revenant Systems — Webfonts
+   ------------------------------------------------------------
+   THREE display registers, unified by jade + gold:
+     · WORDMARK    → "Street Reich"        (proprietary .otf — the distressed brand caps)
+     · OCCULT      → "Season of the Witch"  (proprietary .ttf — undead/ritual accent)
+     · CYBERNETIC  → "Chakra Petch"          (Google, squared techno — headings/UI)
+     · BODY / UI   → "Space Grotesk"         (Google)
+     · MACHINE     → "JetBrains Mono"        (Google)
+
+   NOTE: the earlier "Ghost theory 1/2.ttf" files were empty stubs and have
+   been superseded by the real brand display face, "Street Reich".
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+/* Street Reich — the distressed, industrial-punk brand display face.
+   THE wordmark voice: hero headlines, product-name lockups, monumental caps.
+   ALL-CAPS, large, and sparing. Never for body copy. */
+@font-face {
+  font-family: 'Street Reich';
+  src: url('../assets/fonts/StreetReich.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Season of the Witch — occult display serif / blackletter.
+   The ritual accent: sigil names, pull quotes, mystic moments.
+   Use SPARINGLY and always large. Never for body copy. */
+@font-face {
+  font-family: 'Season of the Witch';
+  src: url('../assets/fonts/SeasonOfTheWitch.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Display library — campaign/poster faces. One per piece, headline only. Never body, never UI. */
+@font-face{font-family:'Sell Your Soul';src:url('../assets/fonts/SellYourSoul.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Shaun of the Dead';src:url('../assets/fonts/ShaunOfTheDead.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Sweet Helloween';src:url('../assets/fonts/SweetHelloween.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Company Problem';src:url('../assets/fonts/CompanyProblem.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Dead Corporation';src:url('../assets/fonts/DeadCorporation.otf') format('opentype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Sansilk';src:url('../assets/fonts/Sansilk.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}

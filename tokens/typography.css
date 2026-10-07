@@ -1,0 +1,63 @@
+/* ============================================================
+   Revenant Systems — Typography Tokens
+   Three display registers, unified by jade + gold:
+     · WORDMARK  → "Street Reich"        (proprietary — the distressed brand caps)
+     · OCCULT    → "Season of the Witch" (proprietary — undead/ritual accent)
+     · CYBERNETIC→ "Chakra Petch"        (squared techno workhorse: headings/UI)
+   Body in Space Grotesk, machine/trace in JetBrains Mono.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-wordmark: 'Street Reich', 'Chakra Petch', system-ui, sans-serif; /* THE brand display — distressed caps, hero + wordmark lockups. ALL-CAPS, large, sparing. */
+  --font-occult: 'Season of the Witch', 'Times New Roman', serif;   /* undead/ritual accent, use LARGE + sparingly */
+  --font-cyber:  'Chakra Petch', 'Space Grotesk', system-ui, sans-serif; /* headings, product names, labels */
+  --font-sans:   'Space Grotesk', system-ui, -apple-system, sans-serif;  /* body + UI */
+  --font-mono:   'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace; /* code, operators, traces */
+
+  /* ---- Display library: campaign/poster faces. One per piece, headline only. ---- */
+  --font-sell-your-soul: 'Sell Your Soul', var(--font-occult);
+  --font-shaun: 'Shaun of the Dead', var(--font-wordmark);
+  --font-helloween: 'Sweet Helloween', var(--font-occult);
+  --font-company-problem: 'Company Problem', var(--font-cyber);
+  --font-dead-corp: 'Dead Corporation', var(--font-wordmark);
+  --font-sansilk: 'Sansilk', var(--font-sans);
+
+  /* aliases */
+  --font-display: var(--font-wordmark);
+  --font-heading: var(--font-cyber);
+  --font-body:    var(--font-sans);
+
+  /* ---- Type scale (rem, 16px base) — perfect-fourth-ish, tuned ---- */
+  --text-2xs:  0.6875rem;  /* 11px — micro labels, trace ids */
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px — body */
+  --text-md:   1.125rem;   /* 18px */
+  --text-lg:   1.375rem;   /* 22px */
+  --text-xl:   1.75rem;    /* 28px */
+  --text-2xl:  2.25rem;    /* 36px */
+  --text-3xl:  3rem;       /* 48px */
+  --text-4xl:  4rem;       /* 64px */
+  --text-5xl:  5.5rem;     /* 88px — monumental */
+
+  /* ---- Weights ---- */
+  --fw-light:    300;  /* @kind other */
+  --fw-regular:  400;  /* @kind other */
+  --fw-medium:   500;  /* @kind other */
+  --fw-semibold: 600;  /* @kind other */
+  --fw-bold:     700;  /* @kind other */
+
+  /* ---- Line heights ---- */
+  --lh-tight:   1.05;   /* @kind other */
+  --lh-snug:    1.2;    /* @kind other */
+  --lh-normal:  1.5;    /* @kind other */
+  --lh-relaxed: 1.7;    /* @kind other */
+
+  /* ---- Letter spacing ---- */
+  --ls-tight:   -0.02em;  /* @kind other */
+  --ls-normal:  0;        /* @kind other */
+  --ls-wide:    0.04em;   /* @kind other */
+  --ls-wider:   0.12em;   /* @kind other */
+  --ls-widest:  0.28em;   /* @kind other */
+}

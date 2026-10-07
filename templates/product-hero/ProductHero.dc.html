@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- template name="Product Hero" description="Revenant Systems marketing hero — wordmark eyebrow, mythic headline, enterprise subhead, CTAs, and a glowing sigil. Composes DS components." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  @font-face{font-family:'Street Reich';src:url('../../assets/fonts/StreetReich.otf') format('opentype');font-display:swap;}
+  @font-face{font-family:'Season of the Witch';src:url('../../assets/fonts/SeasonOfTheWitch.ttf') format('truetype');font-display:swap;}
+  body{margin:0;}
+</style>
+</helmet>
+<section style="position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:radial-gradient(120% 90% at 50% 110%, #1a1f26 0%, #07080a 62%);font-family:'Space Grotesk',system-ui,sans-serif;">
+
+  <video aria-hidden="true" autoplay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsinline="{{ true }}" disablepictureinpicture="{{ true }}" src="../../assets/video/hero-bg.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.45;pointer-events:none;"></video>
+  <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(7,8,10,0.92) 0%, rgba(7,8,10,0.7) 45%, rgba(7,8,10,0.35) 100%);pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(circle at 82% 32%, rgba(156,123,69,0.12), transparent 42%);pointer-events:none;"></div>
+
+  <div style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:48px;max-width:1200px;margin:0 auto;padding:80px 40px;width:100%;flex-wrap:wrap;">
+
+    <div style="flex:1;min-width:340px;max-width:640px;">
+      <div style="display:inline-flex;align-items:center;gap:10px;font-family:'Chakra Petch',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#9c7b45;margin-bottom:22px;">
+        <span style="font-size:16px;">ᛉ</span> Revenant Systems LLC
+      </div>
+
+      <h1 style="font-family:'Street Reich','Chakra Petch',sans-serif;font-weight:400;font-size:72px;line-height:0.98;letter-spacing:0.01em;text-transform:uppercase;margin:0 0 18px;color:#f3efe2;">
+        Govern the machine<br>before it speaks.
+      </h1>
+
+      <p style="font-size:18px;line-height:1.6;color:#c3c9bd;max-width:52ch;margin:0 0 30px;">An independent AI-engineering studio building <strong style="color:#f3efe2;font-weight:600;">governed, auditable AI</strong> — tools that return, endure, and outlast the hype cycle.</p>
+
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;">
+        <x-import component-from-global-scope="RS.Button" variant="primary" size="lg">Explore the lineup</x-import>
+        <x-import component-from-global-scope="RS.Button" variant="ghost" size="lg">Read the field notes</x-import>
+      </div>
+    </div>
+
+    <div style="flex:0 0 auto;display:flex;align-items:center;justify-content:center;">
+      <img src="../../assets/brand/cyborg-skull-obsidian.png" alt="Obsidian cybernetic skull with gold circuit traces and turquoise inlay" style="width:520px;max-width:46vw;filter:drop-shadow(0 0 60px rgba(31,169,168,0.22));">
+    </div>
+
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

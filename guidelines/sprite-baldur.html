@@ -1,0 +1,35 @@
+<!-- @dsCard group="Sprites" viewport="900x560" name="Baldur — secondary sprite" subtitle="Half-human, half-zombie suit with goggles, horns and cigar. Two forms: human side and zombie side." -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+html{background:var(--bg-void)}
+body{margin:0;min-height:100vh;box-sizing:border-box;background:var(--grad-void);padding:18px 20px;font-family:var(--font-sans);color:var(--bone-100);display:grid;grid-template-columns:220px 1fr;gap:18px}
+.hero{display:flex;flex-direction:column;align-items:center;gap:10px;background:#050505;border:1px solid var(--border-hair);border-radius:var(--radius-lg);padding:14px 12px;overflow:hidden}
+.hero img{height:380px;max-width:100%;object-fit:contain}
+.name{font-family:var(--font-wordmark);font-size:30px;text-transform:uppercase;color:var(--gold-400);line-height:1}
+.role{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-400)}
+.right{display:flex;flex-direction:column;gap:10px;min-width:0}
+.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.s{background:var(--bg-card);border:1px solid var(--border-hair);border-radius:var(--radius-md);padding:8px 6px 10px;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+.s img{height:150px;max-width:100%;object-fit:contain;image-rendering:pixelated}
+.k{font-family:var(--font-cyber);font-size:12px;font-weight:600}
+.w{font-family:var(--font-mono);font-size:9px;color:var(--bone-400);text-align:center}
+.strip{background:var(--bg-card);border:1px solid var(--border-hair);border-radius:var(--radius-md);padding:6px 10px;display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:center}
+.strip div{display:flex;flex-direction:column;align-items:center;gap:2px}
+.strip img{width:100%;height:110px;object-fit:contain;image-rendering:pixelated}
+</style></head><body>
+<div class="hero"><img src="../assets/sprites/baldur/hero-smoking.jpg" alt="Baldur" style="border-radius:var(--radius-md)"><span class="name">Baldur</span><span class="role">Secondary sprite</span></div>
+<div class="right">
+<div class="grid">
+<div class="s"><img src="../assets/sprites/baldur/stand-vest.png" alt=""><span class="k">Stand</span><span class="w">three-piece · default</span></div>
+<div class="s"><img src="../assets/sprites/baldur/stand-red-shirt.png" alt=""><span class="k">Stand · red</span><span class="w">alt outfit</span></div>
+<div class="s"><img src="../assets/sprites/baldur/human-run.png" alt=""><span class="k">Run · human</span><span class="w">human side</span></div>
+<div class="s"><img src="../assets/sprites/baldur/zombie-run.png" alt=""><span class="k">Run · zombie</span><span class="w">zombie side</span></div>
+<div class="s"><img src="../assets/sprites/baldur/zombie-walk.png" alt=""><span class="k">Walk · zombie</span><span class="w">key pose</span></div>
+</div>
+<div class="strip">
+<div><img src="../assets/sprites/baldur/human-walk-strip.png" alt=""><span class="w">Walk cycle · human · 6 frames</span></div>
+<div><img src="../assets/sprites/baldur/zombie-walk-strip.png" alt=""><span class="w">Walk cycle · zombie · 6 frames</span></div>
+</div>
+</div>
+</body></html>

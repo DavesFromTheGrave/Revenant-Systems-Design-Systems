@@ -1,0 +1,41 @@
+/* ============================================================
+   Revenant Systems — Spacing, Radius & Layout Tokens
+   Base unit = 4px. Radii are TIGHT — this brand is forged metal
+   and carved bone, not soft plastic. Nothing is very round.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (4px base) ---- */
+  --space-0:  0;
+  --space-1:  0.25rem;   /* 4 */
+  --space-2:  0.5rem;    /* 8 */
+  --space-3:  0.75rem;   /* 12 */
+  --space-4:  1rem;      /* 16 */
+  --space-5:  1.5rem;    /* 24 */
+  --space-6:  2rem;      /* 32 */
+  --space-7:  3rem;      /* 48 */
+  --space-8:  4rem;      /* 64 */
+  --space-9:  6rem;      /* 96 */
+  --space-10: 8rem;      /* 128 */
+
+  /* ---- Radii — forged, not rounded ---- */
+  --radius-none: 0;
+  --radius-xs:  2px;
+  --radius-sm:  3px;
+  --radius-md:  5px;     /* default control radius */
+  --radius-lg:  8px;     /* cards */
+  --radius-xl:  12px;    /* large panels */
+  --radius-pill: 999px;  /* tags / status pills only */
+
+  /* ---- Borders ---- */
+  --border-w:      1px;
+  --border-w-thick: 2px;
+
+  /* ---- Layout ---- */
+  --container-sm:  640px;
+  --container-md:  880px;
+  --container-lg:  1120px;
+  --container-xl:  1360px;
+  --sidebar-w:     264px;
+  --topbar-h:      60px;
+}

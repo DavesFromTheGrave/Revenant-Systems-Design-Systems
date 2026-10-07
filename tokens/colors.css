@@ -1,0 +1,106 @@
+/* ============================================================
+   Revenant Systems — Color Tokens (v2 · Obsidian, Gold & Turquoise)
+   Black obsidian, inlaid with muted gold, set with turquoise.
+   Surfaces are slate-black (the Gargantua void); gold is the
+   accretion-disk light; turquoise is the living stone.
+   Sampled from the 2026 brand emblems + kintsugi textures.
+   ============================================================ */
+
+:root {
+  /* ---- TURQUOISE (primary) — the inlaid stone, the living current ---- */
+  --turq-50:  #dcf8f7;
+  --turq-100: #aeefec;
+  --turq-200: #7ce3df;
+  --turq-300: #4fd4d0;
+  --turq-400: #33c4c1;   /* highlight turquoise */
+  --turq-500: #1fa9a8;   /* CORE TURQUOISE — sampled from the inlays */
+  --turq-600: #178a8b;
+  --turq-700: #136b6e;
+  --turq-800: #0f4f52;   /* deep matrix */
+  --turq-900: #0b3538;
+  --turq-950: #061c1e;   /* stone abyss */
+
+  /* Legacy aliases — components written against jade keep working */
+  --jade-50:  var(--turq-50);
+  --jade-100: var(--turq-100);
+  --jade-200: var(--turq-200);
+  --jade-300: var(--turq-300);
+  --jade-400: var(--turq-400);
+  --jade-500: var(--turq-500);
+  --jade-600: var(--turq-600);
+  --jade-700: var(--turq-700);
+  --jade-800: var(--turq-800);
+  --jade-900: var(--turq-900);
+  --jade-950: var(--turq-950);
+
+  /* ---- GOLD (secondary) — muted inlay, accretion-disk light ---- */
+  --gold-50:  #f4ead2;
+  --gold-100: #e6d3a4;   /* foil highlight */
+  --gold-200: #d6bb7e;
+  --gold-300: #c4a263;
+  --gold-400: #b08c50;
+  --gold-500: #9c7b45;   /* CORE GOLD — muted, sampled from the inlay lines */
+  --gold-600: #806339;
+  --gold-700: #654d2d;   /* bronze */
+  --gold-800: #4a3822;
+  --gold-900: #2f2416;   /* deep bronze shadow */
+
+  /* ---- INK — obsidian & slate, the void the brand lives on ---- */
+  --ink-950: #07080a00; /* transparent void anchor (unused fill) */
+  --ink-900: #07080a;   /* PAGE — obsidian black, faint cool slate */
+  --ink-850: #0b0d10;
+  --ink-800: #111418;   /* surface */
+  --ink-750: #161a1f;   /* raised surface */
+  --ink-700: #1c2127;   /* card */
+  --ink-600: #2a3038;   /* hairline / border */
+  --ink-500: #3a424c;   /* strong border */
+  --ink-400: #56606b;   /* disabled stroke / slate */
+
+  /* ---- BONE — text on the void ---- */
+  --bone-100: #efeae0;  /* brightest — headings */
+  --bone-200: #e2ddd1;  /* primary text */
+  --bone-300: #bfbdb6;  /* secondary text */
+  --bone-400: #8f939a;  /* muted / captions (slate) */
+  --bone-500: #676c73;  /* faint / disabled */
+
+  /* ---- SEMANTIC ACCENTS ---- */
+  --ember-500: #e23b1e;  /* MALICE / danger — Theme Studio fire */
+  --ember-600: #c41e0e;
+  --ember-300: #ff6b3d;
+  --amber-500: #d9a03a;  /* warning / caution */
+  --arcane-400:#5ee6e0;  /* live / streaming turquoise glow */
+  --success-500: var(--turq-500);
+  --info-500:  #7a93b0;  /* rare slate-blue accent (proxy / trace links) */
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in product UI, not raw scales
+     ============================================================ */
+  --bg-void:        var(--ink-900);
+  --bg-surface:     var(--ink-800);
+  --bg-raised:      var(--ink-750);
+  --bg-card:        var(--ink-700);
+  --bg-inset:       var(--ink-850);
+
+  --text-strong:    var(--bone-100);
+  --text-body:      var(--bone-200);
+  --text-muted:     var(--bone-300);
+  --text-faint:     var(--bone-400);
+  --text-disabled:  var(--bone-500);
+  --text-on-jade:   #07080a;
+  --text-on-turq:   #07080a;
+  --text-on-gold:   #07080a;
+
+  --border-hair:    var(--ink-600);
+  --border-strong:  var(--ink-500);
+  --border-jade:    color-mix(in oklab, var(--turq-500) 40%, transparent);
+  --border-turq:    var(--border-jade);
+  --border-gold:    color-mix(in oklab, var(--gold-500) 50%, transparent);
+
+  --accent-primary: var(--turq-500);
+  --accent-gold:    var(--gold-500);
+  --accent-danger:  var(--ember-500);
+  --accent-warning: var(--amber-500);
+  --accent-live:    var(--arcane-400);
+
+  --focus-ring:     var(--turq-400);
+}

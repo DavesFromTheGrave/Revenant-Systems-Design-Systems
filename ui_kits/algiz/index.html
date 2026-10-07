@@ -1,0 +1,99 @@
+<!-- @dsCard group="Algiz Console" viewport="1400x900" name="Algiz Alignment Engine" subtitle="Runtime-governance console: pipeline runner, trace inspector, live metrics" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algiz Alignment Engine — Console</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<style>html,body{margin:0;height:100%;background:var(--bg-void)}</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" src="AppShell.jsx"></script>
+<script type="text/babel" src="PipelineRunner.jsx"></script>
+<script type="text/babel" src="TraceInspector.jsx"></script>
+<script type="text/babel">
+const NAV = [
+  { id: 'runner', label: 'Pipeline Runner', icon: 'Play' },
+  { id: 'traces', label: 'Trace Inspector', icon: 'ScrollText' },
+  { id: 'proxy', label: 'Alignment Proxy', icon: 'Network' },
+  { id: 'personas', label: 'Personas', icon: 'Users' },
+];
+
+function ProxyView() {
+  const RS = window.RevenantSystemsDesignSystem_019ddb;
+  const { Panel, StatusPill, Badge, Card } = RS;
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:20,maxWidth:820}}>
+      <Panel eyebrow="OpenAI-compatible" title="Alignment Proxy" rune="ᛉ"
+        actions={<StatusPill status="active" label=":9443 listening"/>}>
+        <div style={{fontFamily:'var(--font-mono)',fontSize:13,lineHeight:1.9,color:'var(--bone-300)'}}>
+          <div><span style={{color:'var(--bone-500)'}}>[agent]</span> → <span style={{color:'var(--jade-400)'}}>http://localhost:9443/v1/chat/completions</span></div>
+          <div style={{paddingLeft:24}}>1. ethics check on input</div>
+          <div style={{paddingLeft:24}}>2. forward upstream <span style={{color:'var(--gold-300)'}}>(real key injected)</span></div>
+          <div style={{paddingLeft:24}}>3. operator pipeline on response</div>
+          <div style={{paddingLeft:24}}>4. guardrail quality checks</div>
+          <div style={{paddingLeft:24}}>5. return aligned response</div>
+        </div>
+        <div style={{display:'flex',gap:8,marginTop:14,flexWrap:'wrap'}}>
+          <Badge variant="jade" dot>X-SageRage-Pipeline: active</Badge>
+          <Badge variant="jade">X-SageRage-Guardrail: passed</Badge>
+          <Badge variant="gold">keys on locked drive</Badge>
+        </div>
+      </Panel>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:16}}>
+        {[['/health','GET','config summary'],['/v1/chat/completions','POST','aligned chat'],['/v1/{**rest}','ANY','pass-through']].map(([e,m,d])=>(
+          <Card key={e}><div style={{fontFamily:'var(--font-mono)',fontSize:13,color:'var(--jade-300)',marginBottom:6}}>{e}</div><div style={{display:'flex',gap:8,alignItems:'center'}}><Badge size="sm" variant="gold">{m}</Badge><span style={{fontSize:12,color:'var(--bone-400)'}}>{d}</span></div></Card>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PersonasView(){
+  const RS = window.RevenantSystemsDesignSystem_019ddb;
+  const { Card, Avatar, Badge } = RS;
+  const people = [
+    ['Keystone','ᛉ','Structured reasoning core','gold'],
+    ['Delta','Δ','Adaptive change agent','jade'],
+    ['Karne','K','Blunt technical operator','jade'],
+    ['Noir','N','Skeptical contrast (Sigma)','jade'],
+    ['V','V','Creative divergent voice','gold'],
+  ];
+  return (
+    <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(240px,1fr))',gap:16}}>
+      {people.map(([n,g,d,t])=>(
+        <Card key={n} interactive tone={t} style={{display:'flex',gap:14,alignItems:'center'}}>
+          <Avatar rune={g} tone={t} size={46}/>
+          <div><div style={{fontFamily:'var(--font-cyber)',fontWeight:700,fontSize:16,color:'var(--bone-100)'}}>{n}</div>
+          <div style={{fontSize:12.5,color:'var(--bone-400)'}}>{d}</div></div>
+        </Card>
+      ))}
+    </div>
+  );
+}
+
+function App() {
+  const [active, setActive] = React.useState('runner');
+  const [provider, setProvider] = React.useState('claude-sonnet-4');
+  const view = active === 'runner' ? <window.PipelineRunner provider={provider}/>
+    : active === 'traces' ? <window.TraceInspector/>
+    : active === 'proxy' ? <ProxyView/>
+    : <PersonasView/>;
+  return <window.AppShell nav={NAV} active={active} onNav={setActive} provider={provider} onProvider={setProvider}>{view}</window.AppShell>;
+}
+
+function mount(){
+  if(!window.AppShell || !window.PipelineRunner || !window.TraceInspector || !window.RevenantSystemsDesignSystem_019ddb){ return setTimeout(mount, 40); }
+  ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+}
+mount();
+</script>
+</body>
+</html>

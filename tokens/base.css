@@ -1,0 +1,90 @@
+/* ============================================================
+   Revenant Systems — Base layer
+   Minimal reset + element defaults + a few brand utility classes.
+   Applied globally by consumers via styles.css.
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg-void);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: color-mix(in oklab, var(--jade-500) 40%, transparent); color: var(--bone-100); }
+
+a { color: var(--jade-400); text-decoration: none; }
+a:hover { color: var(--jade-300); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cyber);
+  color: var(--text-strong);
+  line-height: var(--lh-snug);
+  font-weight: var(--fw-bold);
+  margin: 0 0 0.5em;
+}
+
+code, kbd, pre, samp { font-family: var(--font-mono); }
+
+/* ---- Brand utility classes ---- */
+
+/* Eyebrow / engraved label — cyber caps, wide tracked */
+.rs-eyebrow {
+  font-family: var(--font-cyber);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--gold-500);
+}
+
+/* Occult display — the undead / ritual voice */
+.rs-occult {
+  font-family: var(--font-occult);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-wide);
+}
+
+/* Wordmark display — the distressed brand caps (Street Reich). ALL-CAPS, large. */
+.rs-display {
+  font-family: var(--font-wordmark);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  line-height: var(--lh-tight);
+  letter-spacing: 0.01em;
+}
+
+/* Gilded / jade gradient text */
+.rs-text-gold {
+  background: var(--grad-text-gold);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.rs-text-jade, .rs-text-turq {
+  background: var(--grad-text-jade);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+/* Obsidian kintsugi texture fill (use behind emblems / hero bands) */
+.rs-obsidian { background: #07080a url('../assets/brand/texture-obsidian-kintsugi.jpg') center/cover; }
+
+/* Hairline divider */
+.rs-rule {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-hair) 20%, var(--border-hair) 80%, transparent);
+}
+
+/* Gilded hairline (gold) */
+.rs-rule-gold {
+  border: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--gold-500) 60%, transparent), transparent);
+}

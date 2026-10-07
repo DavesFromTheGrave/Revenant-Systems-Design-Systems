@@ -1,0 +1,68 @@
+/* ============================================================
+   Revenant Systems — Effects: shadows, glows, gradients, textures
+   The brand glows from within (turquoise stone) and catches light on
+   metal edges (muted gold). Shadows are deep and cold; glows are turquoise.
+   (--glow-jade-* names kept for compatibility; they now glow turquoise.)
+   ============================================================ */
+
+:root {
+  /* ---- Elevation shadows (cold, deep) ---- */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md:  0 4px 14px rgba(0,0,0,0.55);
+  --shadow-lg:  0 12px 34px rgba(0,0,0,0.62);
+  --shadow-xl:  0 24px 60px rgba(0,0,0,0.7);
+
+  /* ---- Jade glow (the living current) — for active/live/focus ---- */
+  --glow-jade-sm: 0 0 0 1px color-mix(in oklab, var(--jade-500) 55%, transparent),
+                  0 0 12px color-mix(in oklab, var(--jade-500) 35%, transparent);
+  --glow-jade-md: 0 0 18px color-mix(in oklab, var(--jade-500) 45%, transparent),
+                  0 0 3px color-mix(in oklab, var(--arcane-400) 60%, transparent);
+  --glow-jade-lg: 0 0 40px color-mix(in oklab, var(--jade-500) 40%, transparent);
+
+  /* ---- Gold glint — for gilded borders / hovered metal ---- */
+  --glow-gold-sm: 0 0 0 1px color-mix(in oklab, var(--gold-500) 55%, transparent),
+                  0 0 10px color-mix(in oklab, var(--gold-500) 28%, transparent);
+  --glow-ember:   0 0 22px color-mix(in oklab, var(--ember-500) 50%, transparent);
+
+  /* ---- Inner bevel (metal edge on raised surfaces) ---- */
+  --bevel-top:    inset 0 1px 0 rgba(255,255,255,0.06);  /* @kind shadow */
+  --bevel-metal:  inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.5);  /* @kind shadow */
+
+  /* ============================================================
+     GRADIENTS — the two signature fills
+     ============================================================ */
+
+  /* Jade marble — cool → bright core → deep, with a diagonal sheen */
+  --grad-jade: linear-gradient(135deg, #0f4f52 0%, #1fa9a8 42%, #5ee6e0 58%, #136b6e 100%);  /* @kind color */
+  --grad-jade-soft: linear-gradient(150deg, var(--jade-800) 0%, var(--jade-600) 100%);
+
+  /* Gold foil — struck metal with a hot highlight band across the middle */
+  --grad-gold: linear-gradient(115deg, #4a3822 0%, #9c7b45 30%, #d6bb7e 50%, #9c7b45 70%, #654d2d 100%);  /* @kind color */
+  --grad-gold-soft: linear-gradient(150deg, var(--gold-700) 0%, var(--gold-400) 100%);
+
+  /* Ember forge — Theme Studio / danger register */
+  --grad-ember: linear-gradient(180deg, #1a0a06 0%, #c41e0e 55%, #ff8a1a 72%, #1a0a06 100%);  /* @kind color */
+
+  /* Void wash — slate depth rising from below the obsidian */
+  --grad-void: radial-gradient(120% 90% at 50% 110%, #1a1f26 0%, #07080a 62%);  /* @kind color */
+  --grad-turq: var(--grad-jade);
+
+  /* Event horizon — Gargantua: a thin band of muted-gold accretion light
+     across a black disc on slate. Hero backgrounds only. */
+  --grad-horizon: radial-gradient(38% 5% at 50% 52%, rgba(214,187,126,0.30) 0%, rgba(156,123,69,0.12) 45%, transparent 100%), radial-gradient(24% 34% at 50% 50%, #000 60%, transparent 61%), radial-gradient(60% 50% at 50% 50%, rgba(156,123,69,0.14) 0%, transparent 70%), radial-gradient(120% 100% at 50% 100%, #1a1f26 0%, #07080a 65%);  /* @kind color */
+
+  /* Text-clip helpers (apply with background-clip:text) */
+  --grad-text-jade: linear-gradient(180deg, #7ce3df 0%, #1fa9a8 100%);
+  --grad-text-turq: var(--grad-text-jade);
+  --grad-text-gold: linear-gradient(180deg, #e6d3a4 0%, #b08c50 55%, #654d2d 100%);
+
+  /* ---- Motion ---- */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);  /* @kind other */
+  --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1);  /* @kind other */
+  --dur-fast:   120ms;  /* @kind other */
+  --dur-base:   200ms;  /* @kind other */
+  --dur-slow:   360ms;  /* @kind other */
+
+  /* ---- Backdrop ---- */
+  --blur-panel: blur(14px) saturate(115%);  /* @kind other */
+}

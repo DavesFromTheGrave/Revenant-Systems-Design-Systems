@@ -1,0 +1,31 @@
+<!-- @dsCard group="Sprites" viewport="880x600" name="Damien — primary sprite" subtitle="Revenant Systems' mascot sprite. 192×208 frames, transparent. States map to real app events." -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+html{background:var(--bg-void)}
+body{margin:0;min-height:100vh;box-sizing:border-box;background:var(--grad-void);padding:18px 20px;font-family:var(--font-sans);color:var(--bone-100);display:grid;grid-template-columns:230px 1fr;gap:14px 20px}
+.jump{grid-column:1/-1;background:var(--bg-card);border:1px solid var(--border-hair);border-radius:var(--radius-md);padding:8px 12px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.jump img{width:100%;height:110px;object-fit:contain}
+.hero{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--bg-card);border:1px solid var(--border-hair);border-radius:var(--radius-lg);padding:16px}
+.hero img{width:192px;image-rendering:auto}
+.name{font-family:var(--font-wordmark);font-size:30px;text-transform:uppercase;color:var(--gold-400);line-height:1}
+.role{font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-400)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;align-content:start}
+.s{background:var(--bg-card);border:1px solid var(--border-hair);border-radius:var(--radius-md);padding:8px 6px 10px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.s img{width:110px;height:119px;object-fit:contain}
+.k{font-family:var(--font-cyber);font-size:12px;font-weight:600}
+.w{font-family:var(--font-mono);font-size:9px;color:var(--bone-400);text-align:center}
+</style></head><body>
+<div class="hero"><img src="../assets/sprites/damien/damien-hero-1024.png" alt="Damien" style="width:200px"><span class="name">Damien</span><span class="role">Primary sprite</span></div>
+<div class="grid">
+<div class="s"><img src="../assets/sprites/damien/idle.gif" alt=""><span class="k">Idle</span><span class="w">default · tail sway · re-export (fringe)</span></div>
+<div class="s"><img src="../assets/sprites/damien/waiting.gif" alt=""><span class="k">Waiting</span><span class="w">awaiting input</span></div>
+<div class="s"><img src="../assets/sprites/damien/active-work.gif" alt=""><span class="k">Active work</span><span class="w">task running</span></div>
+<div class="s"><img src="../assets/sprites/damien/review-grin.gif" alt=""><span class="k">Review</span><span class="w">toothy grin · done</span></div>
+<div class="s"><img src="../assets/sprites/damien/failed.gif" alt=""><span class="k">Failed</span><span class="w">deflate · error</span></div>
+<div class="s"><img src="../assets/sprites/damien/wave.gif" alt=""><span class="k">Wave</span><span class="w">greet · tail wiggle</span></div>
+<div class="s"><img src="../assets/sprites/damien/run-left.gif" alt=""><span class="k">Run ←</span><span class="w">move left</span></div>
+<div class="s"><img src="../assets/sprites/damien/run-right.gif" alt=""><span class="k">Run →</span><span class="w">move right</span></div>
+</div>
+<div class="jump"><img src="../assets/sprites/damien/jump-spin-7-frames.png" alt="Damien jump spin"><span class="k">Jump · 360° spin</span><span class="w">7 frames, grumpy takeoff to toothy-grin landing. Use for success or celebrate.</span></div>
+</body></html>
