@@ -1,0 +1,53 @@
+<!-- @dsCard group="Components" viewport="700x440" name="Forms" subtitle="Button · IconButton · Input · Textarea · Select · Checkbox · Switch" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<style>body{margin:0;background:var(--bg-void);padding:22px;font-family:var(--font-sans)}
+.grp{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:16px}
+.lbl{font-family:var(--font-cyber);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-500);width:100%;margin-bottom:2px}</style>
+</head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Button, IconButton, Input, Textarea, Select, Checkbox, Switch } = window.RevenantSystemsDesignSystem_019ddb;
+function I({n,s=18}){const r=React.useRef();React.useEffect(()=>{if(r.current){r.current.innerHTML='';const el=window.lucide.createElement(window.lucide[n]);el.setAttribute('width',s);el.setAttribute('height',s);r.current.appendChild(el);}});return <span ref={r} style={{display:'flex'}}/>;}
+function Demo(){
+  return (<div>
+    <div className="grp"><span className="lbl">Button — variants & sizes</span>
+      <Button>Run pipeline</Button>
+      <Button variant="secondary">Deploy proxy</Button>
+      <Button variant="ghost">View trace</Button>
+      <Button variant="danger" iconLeft={<I n="X" s={15}/>}>Veto</Button>
+      <Button loading>Aligning</Button>
+      <Button size="sm">Small</Button>
+      <Button size="lg" variant="secondary">Large</Button>
+      <Button disabled>Disabled</Button>
+    </div>
+    <div className="grp"><span className="lbl">IconButton</span>
+      <IconButton label="Settings"><I n="Settings"/></IconButton>
+      <IconButton variant="solid" label="Filter"><I n="SlidersHorizontal"/></IconButton>
+      <IconButton variant="jade" label="Run"><I n="Play"/></IconButton>
+      <IconButton active label="Live"><I n="Activity"/></IconButton>
+    </div>
+    <div className="grp"><span className="lbl">Fields</span>
+      <Input label="Profile" placeholder="SageRage" iconLeft={<I n="Key" s={15}/>} style={{width:190}}/>
+      <Select label="Persona" options={['Keystone','Delta','Karne','Noir','V']} style={{width:150}}/>
+      <Input label="Endpoint" error="Unreachable" defaultValue="localhost:9443" style={{width:190}}/>
+    </div>
+    <div className="grp"><span className="lbl">Textarea</span>
+      <Textarea label="System instruction" defaultValue="Enforce Layer 0 prohibitions. Route high-stakes through Sigma." style={{width:'100%'}}/>
+    </div>
+    <div className="grp"><span className="lbl">Toggles</span>
+      <Checkbox defaultChecked label="Ethics gate (input)"/>
+      <Checkbox label="Bypass proxy"/>
+      <Switch defaultChecked label="High-stakes routing"/>
+      <Switch label="Audio mode"/>
+    </div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body></html>

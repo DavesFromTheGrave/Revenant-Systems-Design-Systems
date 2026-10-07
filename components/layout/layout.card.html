@@ -1,0 +1,42 @@
+<!-- @dsCard group="Components" viewport="700x420" name="Layout" subtitle="Card · Panel · Tabs · Avatar" -->
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+<style>body{margin:0;background:var(--bg-void);padding:22px;font-family:var(--font-sans)}
+.row{display:flex;gap:16px;align-items:stretch;margin-bottom:16px;flex-wrap:wrap}</style>
+</head><body>
+<div id="root"></div>
+<script type="text/babel">
+const RS = window.RevenantSystemsDesignSystem_019ddb;
+const { Card, Panel, Tabs, Avatar, IconButton, Badge, StatusPill } = RS;
+function I({n,s=16}){const r=React.useRef();React.useEffect(()=>{if(r.current){r.current.innerHTML='';const el=window.lucide.createElement(window.lucide[n]);el.setAttribute('width',s);el.setAttribute('height',s);r.current.appendChild(el);}});return <span ref={r} style={{display:'flex'}}/>;}
+function Demo(){
+  const [tab,setTab]=React.useState('Trace');
+  return (<div>
+    <div className="row">
+      <Card style={{flex:1,minWidth:200}}><div style={{fontFamily:'var(--font-cyber)',fontWeight:700,color:'var(--bone-100)',fontSize:15,marginBottom:6}}>Default card</div><div style={{fontSize:13,color:'var(--text-muted)'}}>Raised surface, hairline, cold shadow.</div></Card>
+      <Card active style={{flex:1,minWidth:200}}><div style={{fontFamily:'var(--font-cyber)',fontWeight:700,color:'var(--bone-100)',fontSize:15,marginBottom:6}}>Active · jade rim</div><div style={{fontSize:13,color:'var(--text-muted)'}}>Lit rim + glow, runtime alive.</div></Card>
+      <Card interactive tone="gold" style={{flex:1,minWidth:200}}><div style={{fontFamily:'var(--font-cyber)',fontWeight:700,color:'var(--bone-100)',fontSize:15,marginBottom:6}}>Interactive · gold</div><div style={{fontSize:13,color:'var(--text-muted)'}}>Hover to lift.</div></Card>
+    </div>
+    <Panel eyebrow="Operator pipeline" title="RAGE Engine" rune="ᛉ"
+      actions={<><StatusPill status="active"/><IconButton label="Config"><I n="Settings"/></IconButton></>}
+      style={{marginBottom:16}}>
+      <Tabs tabs={['Trace','Metrics','Memory']} value={tab} onChange={setTab}/>
+      <div style={{padding:'14px 2px 0',fontSize:13,color:'var(--text-muted)'}}>Showing <b style={{color:'var(--jade-300)'}}>{tab}</b> — Containment → Omega → Chi → Sigma.</div>
+    </Panel>
+    <div className="row" style={{alignItems:'center'}}>
+      <Avatar name="Dave Fisher" live/>
+      <Avatar name="Keystone" tone="gold"/>
+      <Avatar rune="ᛉ" size={48}/>
+      <Avatar rune="V" tone="gold" size={32}/>
+      <Badge variant="jade" dot>runtime online</Badge>
+    </div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body></html>
